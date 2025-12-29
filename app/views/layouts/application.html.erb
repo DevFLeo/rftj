@@ -8,12 +8,24 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <!-- CSS -->
-    <%= stylesheet_link_tag "/layout/assets/fonts/inter/inter.css", "data-turbo-track": "reload" %>
-    <%= stylesheet_link_tag "admin", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "/layout/assets/css/styles.min.css", "data-turbo-track": "reload" %>
     <!-- JS -->
-    <%= javascript_include_tag "/layout/assets/js/jquery/jquery.min.js", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "/layout/assets/js/app.min.js",                          "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "/layout/assets/js/dashboard.js",                        "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "/layout/assets/js/sidebarmenu.js",                      "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "/layout/assets/libs/jquery/dist/jquery.min.js",         "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "/layout/assets/libs/apexcharts/dist/apexcharts.min.js", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "/layout/assets/libs/simplebar/dist/simplebar.js", "data-turbo-track": "reload" %>
   </head>
   <body class="">
-    <%= yield %>
-  </body>
+    <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full" data-sidebar-position="fixed" data-header-position="fixed">
+      <%= render "shared/sidebar" %>
+      <div class="body-wrapper">
+        <%= render "shared/header" %>
+        <div class="container-fluid">
+          <%= yield %>
+        </div>
+      </div>
+ </div>
+ </body>
 </html>
