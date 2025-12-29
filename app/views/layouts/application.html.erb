@@ -1,23 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt">
   <head>
-    <title><%= content_for(:title) || "Rftj" %></title>
+    <title>SimpliCONSIG</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Metadados  -->
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= yield :head %>
-
-    <link rel="manifest" href="/manifest.json">
-    <link rel="icon" href="/icon.png" type="image/png">
-    <link rel="icon" href="/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/icon.png">
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+    <!-- CSS -->
+    <%= stylesheet_link_tag "/layout/assets/fonts/inter/inter.css", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "admin", "data-turbo-track": "reload" %>
+    <!-- JS -->
+    <%= javascript_include_tag "/layout/assets/js/jquery/jquery.min.js", "data-turbo-track": "reload" %>
   </head>
-
-  <body>
+  <body class="">
     <%= yield %>
   </body>
 </html>
