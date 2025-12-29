@@ -1,0 +1,11 @@
+<p style="color: green"><%= notice %></p>
+<% content_for :title, "G instituicaos" %>
+<div id="g_instituicoes">
+  <% @g_instituicoes.each do |g_instituicao| %>
+    <%= render g_instituicao %>
+    <p>
+      <%= link_to "Show this g instituicao", g_instituicao %>
+    </p>
+  <% end %>
+</div>
+<%= link_to "New g instituicao", new_g_instituicao_path %>

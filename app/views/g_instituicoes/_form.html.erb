@@ -1,0 +1,23 @@
+<%= form_with(model: g_instituicao) do |form| %>
+  <% if g_instituicao.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(g_instituicao.errors.count, "error") %> prohibited this g_instituicao from being saved:</h2>
+      <ul>
+        <% g_instituicao.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div>
+    <%= form.label :nome, style: "display: block" %>
+    <%= form.text_field :nome %>
+  </div>
+  <div>
+    <%= form.label :historico, style: "display: block" %>
+    <%= form.text_field :historico %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
