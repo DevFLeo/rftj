@@ -1,9 +1,10 @@
 <aside class="left-sidebar">
   <div>
     <div class="brand-logo d-flex align-items-center justify-content-between">
-      <a href="./index.html" class="text-nowrap logo-img">
-        <img src="https://www.tjro.jus.br/templates/portal_tjro_helix_j5/images/presets/default/logo.png" width="180" alt="" />
-      </a>
+      <%# Link para a raiz usando o Helper do Rails %>
+      <%= link_to root_path, class: "text-nowrap logo-img" do %>
+        <%= image_tag "https://www.tjro.jus.br/templates/portal_tjro_helix_j5/images/presets/default/logo.png", width: "180", alt: "Logo TJRO" %>
+      <% end %>
       <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
         <i class="ti ti-x fs-8"></i>
       </div>
@@ -15,13 +16,22 @@
           <span class="hide-menu">Home</span>
         </li>
         <li class="sidebar-item">
-          <a class="sidebar-link" href="./index.html" aria-expanded="false">
+          <%# Usando link_to com bloco para manter a estrutura de ícone + texto %>
+          <%= link_to root_path, class: "sidebar-link", aria: { expanded: "false" } do %>
             <span>
               <i class="ti ti-layout-dashboard"></i>
             </span>
             <span class="hide-menu">Dashboard</span>
-          </a>
+          <% end %>
         </li>
+        <%# Futuro: Aqui você pode adicionar o link para Projetos ou Analistas %>
+        <%# Exemplo de como seria para Projetos: %>
+        <%# <li class="sidebar-item"> %>
+        <%#   <%= link_to g_projetos_path, class: "sidebar-link" do % > %>
+        <%#     <span><i class="ti ti-file-description"></i></span> %>
+        <%#     <span class="hide-menu">Projetos</span> %>
+        <%#   <% end % > %>
+        <%# </li> %>
       </ul>
     </nav>
   </div>
